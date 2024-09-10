@@ -1,0 +1,41 @@
+# Database Configuration
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jwt_schema_java
+    username: root
+    password: Yarabnew900@
+    type: com.zaxxer.hikari.HikariDataSource
+#      maximum-pool-size: 50
+
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true
+  database: mysql
+  database-platform: org.hibernate.dialect.MySQL8Dialect
+
+# JWT Configuration
+application:
+  security:
+    jwt:
+      secret: "jV6FsT6eOjX0h+xJ2KShMOKdsert15495lkokosaxosakcokosdkcosdkoksdvfjvifdjvifvjdskvjsjG7PVHMN5Hl3F2ZbPi3Fkt8="
+      access-token-expiration: 3600000
+      refresh-token-expiration: 7200000
+
+
+# Logging Configuration
+logging:
+  level:
+          org.springframework.boot.autoconfigure: DEBUG
+server:
+  forward-headers-strategy: framework
+
+management:
+  server:
+    add-application-context-header: true
+
+
